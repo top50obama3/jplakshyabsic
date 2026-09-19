@@ -1,750 +1,295 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oasis Still — Date-Palm Solar Desalination</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --sand: #E7DAB9;
-    --sand-2: #DCCBA0;
-    --paper: #F4ECD8;
-    --ink: #26190F;
-    --ink-soft: #5B4A38;
-    --biochar: #2E211A;
-    --biochar-soft: #7A5C3E;
-    --water: #1E6E77;
-    --water-2: #143F49;
-    --sun: #C98A2B;
-    --sun-2: #E4B24C;
-    --line: rgba(38,25,15,0.16);
-    --card: rgba(255,255,255,0.38);
-    --shadow: 0 1px 0 rgba(38,25,15,0.08);
-    --font-display: "Fraunces", serif;
-    --font-body: "IBM Plex Sans", sans-serif;
-    --font-mono: "IBM Plex Mono", monospace;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --sand: #241A12;
-      --sand-2: #1B130D;
-      --paper: #2A1F16;
-      --ink: #F1E6D2;
-      --ink-soft: #C9B79A;
-      --biochar: #14100B;
-      --biochar-soft: #A98A5F;
-      --water: #3E9BA5;
-      --water-2: #1E6E77;
-      --sun: #E4B24C;
-      --sun-2: #F3CD77;
-      --line: rgba(241,230,210,0.14);
-      --card: rgba(20,16,11,0.45);
-      --shadow: 0 1px 0 rgba(0,0,0,0.3);
-    }
-  }
-  :root[data-theme="dark"]{
-    --sand: #241A12;
-    --sand-2: #1B130D;
-    --paper: #2A1F16;
-    --ink: #F1E6D2;
-    --ink-soft: #C9B79A;
-    --biochar: #14100B;
-    --biochar-soft: #A98A5F;
-    --water: #3E9BA5;
-    --water-2: #1E6E77;
-    --sun: #E4B24C;
-    --sun-2: #F3CD77;
-    --line: rgba(241,230,210,0.14);
-    --card: rgba(20,16,11,0.45);
-    --shadow: 0 1px 0 rgba(0,0,0,0.3);
-  }
+<header class="wrap top">
+  <a class="brand" href="#top">AshPure</a>
+  <nav aria-label="Sections">
+    <a href="#problem">The problem</a>
+    <a href="#process">How it's made</a>
+    <a href="#simulator">Simulator</a>
+    <a href="#limits">Limits</a>
+    <a href="#sdg">SDGs</a>
+  </nav>
+</header>
 
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background: linear-gradient(180deg, var(--sand) 0%, var(--sand-2) 100%);
-    color: var(--ink);
-    font-family: var(--font-body);
-    line-height:1.5;
-    min-height:100vh;
-  }
-  .wrap{max-width:1180px;margin:0 auto;padding:40px 24px 80px;}
+<main id="top">
 
-  header.hero{
-    display:grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap:40px;
-    align-items:end;
-    padding-bottom:28px;
-    border-bottom:1px solid var(--line);
-    margin-bottom:36px;
-  }
-  @media (max-width:860px){
-    header.hero{grid-template-columns:1fr; gap:20px;}
-  }
-  .eyebrow-row{
-    display:flex; align-items:center; gap:10px; margin-bottom:14px;
-    color:var(--ink-soft); font-size:13px; letter-spacing:0.01em;
-  }
-  .eyebrow-row .dot{width:6px;height:6px;border-radius:50%;background:var(--sun);}
-  h1{
-    font-family:var(--font-display);
-    font-weight:600;
-    font-size:clamp(34px,5vw,54px);
-    line-height:1.04;
-    margin:0 0 14px;
-    letter-spacing:-0.01em;
-  }
-  .hero p{
-    max-width:52ch;
-    color:var(--ink-soft);
-    font-size:16px;
-    margin:0;
-  }
-  .hero-side{
-    font-family:var(--font-mono);
-    font-size:13px;
-    color:var(--ink-soft);
-    border-left:1px solid var(--line);
-    padding-left:20px;
-  }
-  .hero-side .num{
-    font-family:var(--font-display);
-    font-size:40px;
-    color:var(--water);
-    display:block;
-    margin-bottom:4px;
-    font-weight:600;
-  }
+<section class="wrap hero" aria-labelledby="h-hero">
+  <div class="hero-copy">
+    <h1 id="h-hero">Turning coal-ash pond waste into ceramic water filters</h1>
+    <p class="lede">Coal ash is usually stored in ponds that can leak into groundwater. AshPure tests that ash, dries it, mixes it with clay, and fires it into a porous ceramic. Water passes through the pores. Particles stay behind.</p>
+    <p class="flow-line">Coal power waste <span aria-hidden="true">→</span><span class="sr-only">becomes a</span> ceramic filter <span aria-hidden="true">→</span><span class="sr-only">that gives</span> cleaner water</p>
+    <div class="hero-actions">
+      <a class="btn" href="#simulator">Open the simulator</a>
+      <a class="btn ghost" href="#process">See how it's made</a>
+    </div>
+    <p class="hero-stat"><strong id="heroStat">89%</strong> of suspended particles removed by the AshPure filter, using the settings currently in the simulator.</p>
+  </div>
+  <figure class="hero-art">
+    <canvas id="heroCanvas" role="img" aria-label="Animation: polluted water with ash particles falls onto a porous ceramic filter. Larger particles stay on the surface, and cleaner drops fall into a beaker below."></canvas>
+    <span class="tag" style="top:12px">Polluted water</span>
+    <span class="tag" style="top:calc(52% + 8px)">Ash-based ceramic filter</span>
+    <span class="tag" style="top:calc(64% + 4px)">Cleaner water</span>
+  </figure>
+</section>
 
-  section{margin-bottom:52px;}
-  h2{
-    font-family:var(--font-display);
-    font-weight:600;
-    font-size:26px;
-    margin:0 0 6px;
-  }
-  .section-note{color:var(--ink-soft); font-size:14.5px; margin:0 0 22px; max-width:64ch;}
-
-  /* --- layout: stage + controls --- */
-  .stage-grid{
-    display:grid;
-    grid-template-columns: 1.3fr 0.9fr;
-    gap:28px;
-    align-items:start;
-  }
-  @media (max-width:900px){ .stage-grid{grid-template-columns:1fr;} }
-
-  .stage-card{
-    background: var(--card);
-    border:1px solid var(--line);
-    border-radius:4px;
-    padding:18px;
-    box-shadow:var(--shadow);
-  }
-  canvas#basin{width:100%; height:auto; display:block; border-radius:2px;}
-  .stage-caption{
-    display:flex; justify-content:space-between; align-items:baseline;
-    margin-top:12px; font-size:13px; color:var(--ink-soft); font-family:var(--font-mono);
-  }
-  .stage-caption .yield-live{color:var(--water); font-weight:500;}
-
-  .controls-card{
-    background: var(--card);
-    border:1px solid var(--line);
-    border-radius:4px;
-    padding:20px 22px;
-    box-shadow:var(--shadow);
-  }
-  .controls-card h3{
-    font-family:var(--font-body); font-weight:600; font-size:14px;
-    margin:0 0 16px; color:var(--ink); text-transform:none;
-  }
-  .field{margin-bottom:18px;}
-  .field label{
-    display:flex; justify-content:space-between; font-size:13.5px; margin-bottom:6px; color:var(--ink);
-  }
-  .field label .val{font-family:var(--font-mono); color:var(--water); font-weight:500;}
-  input[type="range"]{
-    width:100%; accent-color:var(--water);
-    height:4px; background:var(--line); border-radius:2px;
-  }
-  .run-btn{
-    width:100%;
-    margin-top:6px;
-    padding:12px 16px;
-    background:var(--ink);
-    color:var(--paper);
-    border:none;
-    border-radius:3px;
-    font-family:var(--font-body);
-    font-weight:600;
-    font-size:14.5px;
-    cursor:pointer;
-    transition:opacity .15s ease;
-  }
-  .run-btn:hover{opacity:0.86;}
-  .run-btn:active{opacity:0.7;}
-
-  /* --- legend chips --- */
-  .legend{display:flex; gap:16px; flex-wrap:wrap; margin:0 0 18px;}
-  .legend .chip{display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink-soft);}
-  .legend .swatch{width:11px; height:11px; border-radius:2px; display:inline-block;}
-
-  /* --- charts --- */
-  .chart-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:24px;
-  }
-  @media (max-width:780px){ .chart-grid{grid-template-columns:1fr;} }
-  .chart-card{
-    background:var(--card); border:1px solid var(--line); border-radius:4px;
-    padding:16px 16px 8px;
-  }
-  .chart-card h4{
-    font-family:var(--font-body); font-weight:600; font-size:13.5px;
-    margin:0 0 10px; color:var(--ink-soft); font-weight:500;
-  }
-  .chart-card .canvas-wrap{position:relative; height:220px;}
-
-  /* --- stats table --- */
-  table.stats{
-    width:100%; border-collapse:collapse; font-size:14px;
-    background:var(--card); border:1px solid var(--line); border-radius:4px; overflow:hidden;
-  }
-  table.stats th, table.stats td{
-    text-align:left; padding:12px 16px; border-bottom:1px solid var(--line);
-  }
-  table.stats th{
-    font-weight:600; color:var(--ink-soft); font-size:12.5px;
-    font-family:var(--font-mono);
-  }
-  table.stats tr:last-child td{border-bottom:none;}
-  table.stats td.mat{display:flex; align-items:center; gap:10px; font-weight:500;}
-  table.stats td.mat .swatch{width:10px;height:10px;border-radius:2px;}
-  table.stats td.hero-num{font-family:var(--font-mono); color:var(--water); font-weight:500;}
-
-  footer{
-    margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
-    color:var(--ink-soft); font-size:13px; max-width:74ch;
-  }
-  footer strong{color:var(--ink);}
-</style>
-</head>
-<body>
-<div class="wrap">
-
-  <header class="hero">
+<section class="block" id="problem" aria-labelledby="h-problem">
+  <div class="wrap split">
     <div>
-      <div class="eyebrow-row"><span class="dot"></span>Solar still simulator</div>
-      <h1>What carbonized date-palm waste actually does to a solar still</h1>
-      <p>Salt doesn't pass through a biochar filter — it passes through a phase change. This simulator models the part date-palm biochar really plays: as a floating solar absorber that pulls more of the sun's energy into evaporation, so more seawater turns to vapor and leaves its salt behind.</p>
+      <h2 id="h-problem">Two problems, one material</h2>
+      <p>Coal power plants leave behind ash. Much of it is stored as a wet slurry in ponds. If a pond leaks, metals and other pollutants can reach the groundwater underneath.</p>
+      <p>At the same time, many communities need affordable ways to treat polluted water. Bricks and cement already reuse some ash. AshPure points the same waste at the second problem.</p>
+      <h3>What it could replace</h3>
+      <ul class="plain-list">
+        <li>Conventional ceramic filter material.</li>
+        <li>Some of the clay, silica or alumina used to make filters.</li>
+        <li>Some disposable plastic filter cartridges, where a ceramic filter is suitable.</li>
+      </ul>
+      <p>It would not replace every filter. Each design has to match the pollutant it removes.</p>
     </div>
-    <div class="hero-side">
-      <span class="num" id="heroYield">—</span>
-      liters of fresh water per m² of basin, per simulated day, with a date-palm biochar absorber at current settings
+    <figure class="art">
+      <svg viewBox="0 0 520 300" role="img" aria-label="Cross-section of a coal ash pond with a leak in its liner. Polluted water seeps down into the groundwater and drifts toward a well.">
+        <rect class="s-ground" x="0" y="90" width="520" height="110"/>
+        <rect class="s-gw" x="0" y="200" width="520" height="55"/>
+        <rect class="s-rock" x="0" y="255" width="520" height="45"/>
+        <path class="s-slurry" d="M60 90 L92 140 L300 140 L332 90 Z"/>
+        <path class="s-liner" d="M60 90 L92 140 L182 140"/>
+        <path class="s-liner" d="M218 140 L300 140 L332 90"/>
+        <circle class="s-drip" cx="200" cy="148" r="4"/>
+        <circle class="s-drip" cx="200" cy="148" r="4" style="animation-delay:0.6s"/>
+        <circle class="s-drip" cx="200" cy="148" r="4" style="animation-delay:1.2s"/>
+        <ellipse class="s-plume" cx="200" cy="205" rx="78" ry="18"/>
+        <line class="conn" x1="284" y1="228" x2="404" y2="228"/>
+        <polygon class="ic-arrow" points="412,228 400,221 400,235"/>
+        <rect class="s-well" x="420" y="72" width="12" height="176"/>
+        <rect class="s-well" x="412" y="64" width="28" height="9" rx="2"/>
+        <text class="s-label" x="196" y="78" text-anchor="middle">Coal ash pond</text>
+        <text class="s-label" x="230" y="166">Leak</text>
+        <text class="s-label" x="14" y="278">Groundwater</text>
+        <text class="s-label" x="426" y="52" text-anchor="middle">Well</text>
+      </svg>
+      <figcaption>Illustration of the problem AshPure starts from: a leaking pond contaminating groundwater.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="block" id="process" aria-labelledby="h-process">
+  <div class="wrap">
+    <h2 id="h-process">From pond to filter</h2>
+    <p>The ash has to come out of the pond first. Then it becomes a filter.</p>
+    <figure class="art">
+      <div class="scroll-x">
+        <svg viewBox="0 0 960 240" role="img" aria-label="Five stages: ash pond slurry, settling and pressing, drying and testing, shaping and firing in a kiln, and the finished ceramic filter.">
+          <!-- connectors -->
+          <line class="conn" x1="165" y1="100" x2="226" y2="100"/><polygon class="ic-arrow" points="236,100 224,93 224,107"/>
+          <line class="conn" x1="350" y1="100" x2="422" y2="100"/><polygon class="ic-arrow" points="432,100 420,93 420,107"/>
+          <line class="conn" x1="532" y1="100" x2="590" y2="100"/><polygon class="ic-arrow" points="600,100 588,93 588,107"/>
+          <line class="conn" x1="746" y1="100" x2="798" y2="100"/><polygon class="ic-arrow" points="808,100 796,93 796,107"/>
+          <!-- 1 pond -->
+          <rect class="ic-ground" x="45" y="65" width="110" height="70" rx="6"/>
+          <path class="ic-slurry" d="M55 65 Q62 112 100 112 Q138 112 145 65 Z"/>
+          <!-- 2 tank -->
+          <path class="ic-tank" d="M240 58 H340 V102 L290 138 L240 102 Z"/>
+          <path class="ic-slurry" d="M243 92 H337 V101 L290 134 L243 101 Z"/>
+          <!-- 3 flask -->
+          <path class="ic-tank" d="M466 58 H494 V92 L522 138 H438 L466 92 Z"/>
+          <path class="water-fill" d="M452 118 H508 L520 136 H440 Z"/>
+          <path class="ic-check" d="M466 114 l9 9 l17 -19"/>
+          <!-- 4 kiln -->
+          <path class="ic-kiln" d="M614 138 V92 Q614 56 670 56 Q726 56 726 92 V138 Z"/>
+          <path class="ic-ember" d="M640 138 V100 Q640 78 670 78 Q700 78 700 100 V138 Z"/>
+          <rect class="ic-kiln" x="604" y="138" width="132" height="8" rx="3"/>
+          <!-- 5 filter -->
+          <path class="ic-filter" d="M812 76 V118 A48 14 0 0 0 908 118 V76 Z"/>
+          <ellipse class="ic-filter" cx="860" cy="76" rx="48" ry="14"/>
+          <ellipse class="ic-pore" cx="836" cy="92" rx="4" ry="2.6"/><ellipse class="ic-pore" cx="862" cy="102" rx="4" ry="2.6"/>
+          <ellipse class="ic-pore" cx="886" cy="90" rx="4" ry="2.6"/><ellipse class="ic-pore" cx="848" cy="112" rx="4" ry="2.6"/>
+          <ellipse class="ic-pore" cx="874" cy="113" rx="4" ry="2.6"/>
+          <circle class="ic-drop" cx="850" cy="136" r="4"/><circle class="ic-drop" cx="872" cy="136" r="4" style="animation-delay:0.6s"/>
+          <!-- labels -->
+          <text class="svg-title" x="100" y="184">Ash pond slurry</text>
+          <text class="svg-sub" x="100" y="204">Pump it out</text>
+          <text class="svg-title" x="290" y="184">Settle and press</text>
+          <text class="svg-sub" x="290" y="204">Solid cake stays;</text><text class="svg-sub" x="290" y="222">water goes to treatment</text>
+          <text class="svg-title" x="480" y="184">Dry and test</text>
+          <text class="svg-sub" x="480" y="204">Metals, chemistry,</text><text class="svg-sub" x="480" y="222">radioactivity</text>
+          <text class="svg-title" x="670" y="184">Shape and fire</text>
+          <text class="svg-sub" x="670" y="204">Ash, clay, pore-former;</text><text class="svg-sub" x="670" y="222">kiln at 800–1,150 °C</text>
+          <text class="svg-title" x="860" y="184">Ceramic filter</text>
+          <text class="svg-sub" x="860" y="204">Water passes through;</text><text class="svg-sub" x="860" y="222">particles stay behind</text>
+        </svg>
+      </div>
+      <figcaption>The full route, simplified. Scroll sideways on a small screen.</figcaption>
+    </figure>
+
+    <ol class="steps">
+      <li>Pump the ash slurry out of the pond.</li>
+      <li>Let it settle in a thickening tank. Heavy ash sinks and clearer water rises.</li>
+      <li>Send the separated water to treatment. It is never released straight into a river or the ground.</li>
+      <li>Squeeze the thick ash in a belt filter press or filter press. The cloth lets water through and holds the ash as a solid cake.</li>
+      <li>Dry the cake and test it for heavy metals, radioactivity and chemical makeup.</li>
+      <li>Grind the ash and mix it with clay or sand, a pore-former such as sawdust or starch, a temporary binder, and water. Press it into disks, tubes, plates or honeycombs.</li>
+      <li>Dry the shapes slowly so they don't crack, then fire them in a kiln at roughly 800–1,150 °C.</li>
+      <li>Add an optional coating (activated carbon or zeolite) for specific pollutants. Then test pore size, strength, flow, pollutant removal and leaching.</li>
+    </ol>
+
+    <div class="split sub">
+      <div>
+        <h3>What the kiln does</h3>
+        <p>The sawdust or starch in the mix burns away. The ash and clay grains fuse together. The empty spaces left behind become pores, and they connect, so water can find a way through.</p>
+        <p id="poreCaption">Before firing: ash and clay grains are packed around bits of sawdust and binder.</p>
+        <div class="btn-row">
+          <button class="btn" id="btnFire" type="button">Fire the kiln</button>
+          <button class="btn ghost" id="btnReset" type="button">Reset</button>
+          <span class="temp-read" id="kilnTemp" aria-live="off">25 °C</span>
+        </div>
+      </div>
+      <figure class="art">
+        <svg id="poreSvg" viewBox="0 0 420 260" role="img" aria-label="Magnified cross-section of an unfired filter. Brown bits of sawdust sit between grains. After firing, the sawdust is gone and connected pores remain.">
+          <g id="poreLayer"></g>
+          <rect class="glow" x="0" y="0" width="420" height="260" pointer-events="none"/>
+        </svg>
+        <figcaption>Magnified cross-section, not to scale.</figcaption>
+      </figure>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section>
-    <h2>The still, in motion</h2>
-    <p class="section-note">Brine sits under a sloped glass cover. A thin mat of carbonized date-palm fiber floats on the surface, soaking up sunlight at the interface instead of letting it scatter through the bulk water. Vapor rises, condenses on the glass, and drips into the collection channel — arriving with the salt left behind.</p>
-    <div class="stage-grid">
-      <div class="stage-card">
-        <canvas id="basin" width="900" height="420"></canvas>
-        <div class="stage-caption">
-          <span>Animated at 1 simulated day per loop</span>
-          <span class="yield-live"><span id="liveDrops">0.0</span> L collected today</span>
-        </div>
+<section class="block" id="simulator" aria-labelledby="h-sim">
+  <div class="wrap">
+    <h2 id="h-sim">Filter simulator</h2>
+    <p>Change how the filter is made and what is in the water. Every chart below uses the same water. Only the filter changes.</p>
+
+    <div class="panel">
+      <div class="controls">
+        <div class="ctl"><label for="cTemp">Kiln temperature <output id="oTemp" for="cTemp"></output></label>
+          <input id="cTemp" type="range" min="800" max="1150" step="10" value="1000"></div>
+        <div class="ctl"><label for="cPF">Pore-former in the mix <output id="oPF" for="cPF"></output></label>
+          <input id="cPF" type="range" min="0" max="30" step="1" value="15"></div>
+        <div class="ctl"><label for="cThick">Filter thickness <output id="oThick" for="cThick"></output></label>
+          <input id="cThick" type="range" min="2" max="20" step="1" value="6"></div>
+        <div class="ctl"><label for="cNTU">Cloudiness of the water <output id="oNTU" for="cNTU"></output></label>
+          <input id="cNTU" type="range" min="10" max="500" step="10" value="120"></div>
+        <div class="ctl"><label for="cPb">Dissolved lead in the water <output id="oPb" for="cPb"></output></label>
+          <input id="cPb" type="range" min="0" max="2" step="0.1" value="0.5"></div>
+        <div class="ctl"><label for="cCoat">Optional coating</label>
+          <select id="cCoat"><option value="carbon">Activated carbon</option><option value="zeolite">Zeolite</option></select></div>
+        <div class="ctl"><label for="cAsh">Metal content of the ash (from lab test)</label>
+          <select id="cAsh"><option value="low">Low</option><option value="mid" selected>Medium</option><option value="high">High</option></select></div>
       </div>
-      <div class="controls-card">
-        <h3>Basin &amp; sun settings</h3>
-        <div class="field">
-          <label>Peak solar irradiance <span class="val" id="vGmax">900 W/m²</span></label>
-          <input type="range" id="gmax" min="500" max="1100" step="10" value="900">
+
+      <div class="run-row">
+        <div class="beaker" aria-hidden="true">
+          <svg viewBox="0 0 100 130"><rect id="waterRect" class="water-fill" x="17" y="117" width="66" height="0"/><path class="glass" d="M14 8 V108 Q14 120 26 120 H74 Q86 120 86 108 V8"/></svg>
         </div>
-        <div class="field">
-          <label>Basin surface area <span class="val" id="vArea">1.0 m²</span></label>
-          <input type="range" id="area" min="0.2" max="4" step="0.1" value="1.0">
-        </div>
-        <div class="field">
-          <label>Starting brine volume <span class="val" id="vVol">40 L</span></label>
-          <input type="range" id="vol" min="10" max="150" step="5" value="40">
-        </div>
-        <div class="field">
-          <label>Starting salinity <span class="val" id="vSal">35 g/L (seawater)</span></label>
-          <input type="range" id="sal" min="10" max="80" step="1" value="35">
-        </div>
-        <div class="field">
-          <label>Sunlight hours <span class="val" id="vDay">11 h</span></label>
-          <input type="range" id="day" min="6" max="14" step="0.5" value="11">
-        </div>
-        <button class="run-btn" id="runBtn">Run simulation</button>
+        <div class="counter"><span class="big" id="liters">0</span> <span>L per m²</span><span class="stat-label" id="litersLabel">clean water collected by the coated AshPure filter in 8 hours</span></div>
+        <button class="btn" id="btnRun" type="button">Run the 8-hour test</button>
+      </div>
+
+      <dl class="made">
+        <div><dt>Porosity</dt><dd id="sPor"></dd></div>
+        <div><dt>Average pore size</dt><dd id="sPore"></dd></div>
+        <div><dt>Strength</dt><dd id="sStr"></dd></div>
+        <div><dt>Leaching check</dt><dd id="sLeach"></dd></div>
+      </dl>
+    </div>
+
+    <ul class="legend" aria-label="Chart legend">
+      <li><svg width="36" height="10" aria-hidden="true"><line class="ln ln-sand" x1="1" x2="35" y1="5" y2="5"/></svg>Sand and gravel</li>
+      <li><svg width="36" height="10" aria-hidden="true"><line class="ln ln-ash" x1="1" x2="35" y1="5" y2="5"/></svg>AshPure ceramic</li>
+      <li><svg width="36" height="10" aria-hidden="true"><line class="ln ln-coat" x1="1" x2="35" y1="5" y2="5"/><circle class="pt-coat" cx="18" cy="5" r="3.5"/></svg>AshPure + <span id="coatName">activated carbon</span></li>
+    </ul>
+
+    <div class="charts">
+      <div class="chart"><h3>Particles removed, by size</h3><p>Bigger particles are caught more easily.</p><div id="ch1"></div></div>
+      <div class="chart"><h3>Flow as the filter clogs</h3><p>Percent of the clean-filter flow rate.</p><div id="ch2"></div></div>
+      <div class="chart"><h3>Dissolved lead removed</h3><p>A coating fills up over time.</p><div id="ch3"></div></div>
+    </div>
+
+    <h3 class="sub" style="margin-top:36px">End of the 8-hour test</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th scope="col">Filter</th><th scope="col">Particles removed</th><th scope="col">Cloudiness left (NTU)</th>
+          <th scope="col">Flow when new (L/m²/h)</th><th scope="col">Flow after 8 h (L/m²/h)</th>
+          <th scope="col">Water treated in 8 h (L/m²)</th><th scope="col">Lead removed, start → hour 8</th>
+        </tr></thead>
+        <tbody id="resBody"></tbody>
+      </table>
+    </div>
+
+    <p class="note"><strong>How this is modeled.</strong> Porosity falls as kiln temperature rises and grows with pore-former. Average pore size follows porosity. Particle removal is a smooth curve that rises as particles get larger compared with the pores. Flow follows a Kozeny–Carman-style relationship: it rises with porosity and pore size and falls with thickness, and it slows as the filter catches more. A coating removes dissolved lead at a starting rate that fades as it fills. The leaching check is qualitative. This is a simplified teaching model, not lab data. Every number would need to be measured on real, tested samples.</p>
+  </div>
+</section>
+
+<section class="block" id="limits" aria-labelledby="h-limits">
+  <div class="wrap split" style="align-items:start">
+    <div>
+      <h2 id="h-limits">What AshPure can't do yet</h2>
+      <ul class="plain-list">
+        <li>It mainly removes particles and some larger contaminants. Dissolved salts, microbes and chemicals can pass through unless extra treatment layers are added.</li>
+        <li>Water that has passed through it is not automatically safe to drink.</li>
+        <li>Each filter has to be designed for the pollutant it targets.</li>
+        <li>Real coal ash can contain heavy metals. It has to be tested, and the fired filter has to be proven not to leach them.</li>
+        <li>Kiln firing uses energy, and the cost per filter has not been worked out.</li>
+        <li>Regulators would need to approve any ash-based material used in water treatment.</li>
+      </ul>
+    </div>
+    <div>
+      <h2>A safe classroom model</h2>
+      <ul class="plain-list">
+        <li>Use clay, fine sand, charcoal, starch or sawdust, and water. Never real ash.</li>
+        <li>Build two small filter columns: sand and gravel as the control, and clay, sand and charcoal as the AshPure model.</li>
+        <li>Pour colored water through both. Compare color, clarity, flow speed and how much passes through.</li>
+        <li>For the dewatering step, let a sand or clay slurry settle, pour off the top water, then filter the rest through a cloth or coffee filter.</li>
+        <li>Do not drink the filtered water.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="sdg" aria-labelledby="h-sdg">
+  <div class="wrap">
+    <h2 id="h-sdg">Sustainable Development Goals it supports</h2>
+    <p>AshPure solves two connected environmental problems at once: coal-ash storage and polluted water. Here is where that lines up with the UN goals.</p>
+
+    <div class="sdg-group">
+      <h3>Directly addressed</h3>
+      <div class="sdgs">
+        <article class="sdg"><div class="num" style="background:#26BDE2;color:#10181B">6</div><div class="body">
+          <h4>Clean Water and Sanitation</h4>
+          <p>Filters remove suspended particles from polluted water, and a coating can target some dissolved metals.</p>
+          <p class="target">Target 6.3: improve water quality by reducing pollution</p></div></article>
+        <article class="sdg"><div class="num" style="background:#BF8B2E;color:#10181B">12</div><div class="body">
+          <h4>Responsible Consumption and Production</h4>
+          <p>An industrial waste stream becomes a product instead of sitting in a pond.</p>
+          <p class="target">Targets 12.4 and 12.5: sound waste management, and less waste through reuse</p></div></article>
+        <article class="sdg"><div class="num" style="background:#FD6925;color:#10181B">9</div><div class="body">
+          <h4>Industry, Innovation and Infrastructure</h4>
+          <p>A new use for power-plant by-products, and a low-cost treatment component for water systems.</p>
+          <p class="target">Target 9.4: cleaner, more resource-efficient industry</p></div></article>
+        <article class="sdg"><div class="num" style="background:#4C9F38;color:#FFFFFF">3</div><div class="body">
+          <h4>Good Health and Well-being</h4>
+          <p>Less contaminated groundwater, and cleaner water when the filter sits inside a full treatment system.</p>
+          <p class="target">Target 3.9: fewer illnesses from water and soil pollution</p></div></article>
       </div>
     </div>
-  </section>
 
-  <section>
-    <h2>Three absorbers, same sun</h2>
-    <p class="section-note">Every curve below runs on the identical solar input from the settings above — only what's floating on the water changes. "Efficiency" here is the fraction of absorbed sunlight that goes straight into evaporating water at the surface, rather than warming the bulk brine or the surrounding air and being lost.</p>
-    <div class="legend">
-      <span class="chip"><span class="swatch" style="background:#8C99A6"></span>Bare water surface · ~35% of absorbed heat becomes vapor</span>
-      <span class="chip"><span class="swatch" style="background:#3B3B3B"></span>Black cloth absorber · ~55%</span>
-      <span class="chip"><span class="swatch" style="background:#7A5C3E"></span>Carbonized date-palm biochar · ~85%</span>
-    </div>
-    <div class="chart-grid">
-      <div class="chart-card">
-        <h4>Solar irradiance through the day</h4>
-        <div class="canvas-wrap"><canvas id="chartSun"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <h4>Evaporation rate, by absorber</h4>
-        <div class="canvas-wrap"><canvas id="chartRate"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <h4>Cumulative fresh water collected</h4>
-        <div class="canvas-wrap"><canvas id="chartCum"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <h4>Salinity left behind in the basin</h4>
-        <div class="canvas-wrap"><canvas id="chartSalt"></canvas></div>
+    <div class="sdg-group">
+      <h3>Supporting, or indirect</h3>
+      <div class="sdgs">
+        <article class="sdg"><div class="num" style="background:#3F7E44;color:#FFFFFF">13</div><div class="body">
+          <h4>Climate Action</h4>
+          <p>Reusing ash could reduce demand for mined clay and silica. Kiln firing uses energy, so the net climate benefit has to be measured, not assumed.</p></div></article>
+        <article class="sdg"><div class="num" style="background:#56C02B;color:#10181B">15</div><div class="body">
+          <h4>Life on Land</h4>
+          <p>Emptying ash ponds lowers the chance of leaks that contaminate soil and groundwater ecosystems.</p></div></article>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section>
-    <h2>End of day</h2>
-    <table class="stats" id="statsTable">
-      <thead>
-        <tr><th>Absorber</th><th>Fresh water collected</th><th>Recovery of starting brine</th><th>Basin salinity, end of day</th><th>Salt saturated?</th></tr>
-      </thead>
-      <tbody id="statsBody"></tbody>
-    </table>
-  </section>
+</main>
 
-  <footer>
-    <strong>How this is modeled.</strong> Solar input follows a sine curve across the daylight window you set. Each absorber has an absorptance (how much sunlight it captures) and an evaporation efficiency (how much of that captured energy becomes vapor rather than warming the water or the air around it — the number carbonized biochar wins on, because its porous, dark structure traps heat right at the water's surface). Evaporated volume is tallied as fresh distillate; remaining salt concentrates in the shrinking brine until it hits NaCl's solubility limit (~360 g/L), at which point salt begins to crystallize out and evaporation from that basin is capped. This is a simplified energy-balance teaching model, not a substitute for lab measurement of a specific biochar sample.
-  </footer>
-
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script>
-(function(){
-  "use strict";
-
-  // ---------- constants ----------
-  var L_V = 2257; // kJ/kg latent heat of vaporization
-  var SAT_SALINITY = 360; // g/L, NaCl solubility ceiling used as cap
-
-  var MATERIALS = [
-    { key:"bare",    label:"Bare water surface",            alpha:0.85, eff:0.35, color:"#8C99A6" },
-    { key:"cloth",   label:"Black cloth absorber",           alpha:0.92, eff:0.55, color:"#3B3B3B" },
-    { key:"biochar", label:"Carbonized date-palm biochar",   alpha:0.95, eff:0.85, color:"#7A5C3E" }
-  ];
-
-  // ---------- dom ----------
-  var $ = function(id){ return document.getElementById(id); };
-  var gmaxEl = $("gmax"), areaEl = $("area"), volEl = $("vol"), salEl = $("sal"), dayEl = $("day");
-  var vGmax = $("vGmax"), vArea = $("vArea"), vVol = $("vVol"), vSal = $("vSal"), vDay = $("vDay");
-  var runBtn = $("runBtn"), heroYield = $("heroYield"), liveDrops = $("liveDrops");
-  var statsBody = $("statsBody");
-
-  function fmt(n, d){ d = d===undefined?2:d; return Number(n).toFixed(d); }
-
-  function readParams(){
-    return {
-      Gmax: parseFloat(gmaxEl.value),
-      A: parseFloat(areaEl.value),
-      V0: parseFloat(volEl.value),
-      S0conc: parseFloat(salEl.value), // g/L
-      dayLen: parseFloat(dayEl.value)
-    };
-  }
-
-  function updateLabels(){
-    var p = readParams();
-    vGmax.textContent = p.Gmax + " W/m²";
-    vArea.textContent = fmt(p.A,1) + " m²";
-    vVol.textContent = fmt(p.V0,0) + " L";
-    vSal.textContent = fmt(p.S0conc,0) + " g/L" + (p.S0conc>=32 && p.S0conc<=38 ? " (seawater)" : "");
-    vDay.textContent = fmt(p.dayLen,1) + " h";
-  }
-
-  // ---------- simulation ----------
-  // Returns per-material time series and summary stats.
-  function simulate(p){
-    var dt = 0.05; // hours
-    var steps = Math.round(p.dayLen/dt);
-    var tArr = [];
-    var G = [];
-
-    for (var i=0;i<=steps;i++){
-      var t = i*dt;
-      tArr.push(t);
-      var g = p.Gmax * Math.max(0, Math.sin(Math.PI * t / p.dayLen));
-      G.push(g);
-    }
-
-    var results = {};
-    MATERIALS.forEach(function(m){
-      var S0_mass = p.S0conc * p.V0; // grams of salt, constant
-      var V = p.V0; // liters remaining
-      var rate = []; // L/hr
-      var cum = [];  // cumulative L
-      var salinity = []; // g/L
-      var cumV = 0;
-      var saturatedAt = null;
-
-      for (var i=0;i<=steps;i++){
-        var g = G[i];
-        var Qsolar = m.alpha * g * p.A; // W
-        var Qevap = m.eff * Qsolar;     // W devoted to evaporation
-        var mdot_kg_s = Qevap / (L_V*1000); // kg/s
-        var litersThisStep = mdot_kg_s * dt*3600; // kg ~ L
-
-        var currentSalinity = V>0 ? (S0_mass/V) : SAT_SALINITY;
-        if (currentSalinity >= SAT_SALINITY){
-          litersThisStep = 0;
-          if (saturatedAt===null) saturatedAt = tArr[i];
-        } else {
-          var minV = S0_mass/SAT_SALINITY;
-          if (V - litersThisStep < minV){
-            litersThisStep = Math.max(0, V - minV);
-          }
-        }
-
-        V = Math.max(V - litersThisStep, S0_mass/SAT_SALINITY);
-        cumV += litersThisStep;
-
-        rate.push(litersThisStep/dt); // L/hr
-        cum.push(cumV);
-        salinity.push(S0_mass/V);
-      }
-
-      results[m.key] = {
-        rate: rate, cum: cum, salinity: salinity,
-        totalL: cumV,
-        finalSalinity: salinity[salinity.length-1],
-        saturated: saturatedAt!==null,
-        saturatedAt: saturatedAt,
-        recovery: cumV/p.V0*100
-      };
-    });
-
-    return { t: tArr, G: G, results: results };
-  }
-
-  // ---------- charts ----------
-  var chartSun, chartRate, chartCum, chartSalt;
-  var ctxStyle = {
-    grid: getComputedStyle(document.documentElement),
-  };
-
-  function themeColor(varName){
-    return getComputedStyle(document.body).getPropertyValue(varName).trim();
-  }
-
-  function baseAxisOpts(){
-    var ink = themeColor('--ink-soft') || '#5B4A38';
-    var line = themeColor('--line') || 'rgba(0,0,0,0.1)';
-    return {
-      x:{ ticks:{ color: ink, font:{ family:"IBM Plex Mono", size:10 }, maxTicksLimit:7 }, grid:{ color: line, drawTicks:false } },
-      y:{ ticks:{ color: ink, font:{ family:"IBM Plex Mono", size:10 } }, grid:{ color: line, drawTicks:false }, beginAtZero:true }
-    };
-  }
-
-  function baseChartOpts(yTitle){
-    var opts = {
-      responsive:true, maintainAspectRatio:false,
-      animation:{ duration:500 },
-      plugins:{ legend:{ display:false }, tooltip:{ mode:'index', intersect:false } },
-      interaction:{ mode:'index', intersect:false },
-      elements:{ point:{ radius:0 }, line:{ borderWidth:2, tension:0.25 } },
-      scales: baseAxisOpts()
-    };
-    if (yTitle){ opts.scales.y.title = { display:true, text:yTitle, color: themeColor('--ink-soft'), font:{ family:"IBM Plex Sans", size:11 } }; }
-    return opts;
-  }
-
-  function buildCharts(sim){
-    if (typeof Chart === 'undefined'){
-      console.warn('Chart.js failed to load; skipping charts.');
-      return;
-    }
-    var labels = sim.t.map(function(t){ return t.toFixed(1); });
-
-    if (chartSun) chartSun.destroy();
-    chartSun = new Chart($("chartSun").getContext("2d"), {
-      type:'line',
-      data:{ labels:labels, datasets:[{ data: sim.G, borderColor:"#C98A2B", backgroundColor:"rgba(201,138,43,0.12)", fill:true }] },
-      options: baseChartOpts("W/m²")
-    });
-
-    if (chartRate) chartRate.destroy();
-    chartRate = new Chart($("chartRate").getContext("2d"), {
-      type:'line',
-      data:{ labels:labels, datasets: MATERIALS.map(function(m){
-        return { data: sim.results[m.key].rate, borderColor:m.color, backgroundColor:'transparent' };
-      })},
-      options: baseChartOpts("L / hour")
-    });
-
-    if (chartCum) chartCum.destroy();
-    chartCum = new Chart($("chartCum").getContext("2d"), {
-      type:'line',
-      data:{ labels:labels, datasets: MATERIALS.map(function(m){
-        return { data: sim.results[m.key].cum, borderColor:m.color, backgroundColor:'transparent' };
-      })},
-      options: baseChartOpts("Liters collected")
-    });
-
-    if (chartSalt) chartSalt.destroy();
-    chartSalt = new Chart($("chartSalt").getContext("2d"), {
-      type:'line',
-      data:{ labels:labels, datasets: MATERIALS.map(function(m){
-        return { data: sim.results[m.key].salinity, borderColor:m.color, backgroundColor:'transparent' };
-      })},
-      options: baseChartOpts("g salt / L brine")
-    });
-  }
-
-  function buildStats(sim, p){
-    statsBody.innerHTML = "";
-    MATERIALS.forEach(function(m){
-      var r = sim.results[m.key];
-      var tr = document.createElement("tr");
-      tr.innerHTML =
-        '<td class="mat"><span class="swatch" style="background:'+m.color+'"></span>'+m.label+'</td>' +
-        '<td class="hero-num">'+fmt(r.totalL,1)+' L</td>' +
-        '<td>'+fmt(r.recovery,1)+'%</td>' +
-        '<td>'+fmt(r.finalSalinity,0)+' g/L</td>' +
-        '<td>'+(r.saturated ? ('yes, at ~'+fmt(r.saturatedAt,1)+' h') : 'no')+'</td>';
-      statsBody.appendChild(tr);
-    });
-    heroYield.textContent = fmt(sim.results.biochar.totalL / p.A, 1);
-  }
-
-  // ---------- basin animation ----------
-  var canvas = $("basin"), cctx = canvas.getContext("2d");
-  var dpr = window.devicePixelRatio || 1;
-  function sizeCanvas(){
-    var w = canvas.clientWidth;
-    var h = w * (420/900);
-    canvas.width = w*dpr; canvas.height = h*dpr;
-    cctx.setTransform(dpr,0,0,dpr,0,0);
-    canvas._w = w; canvas._h = h;
-  }
-
-  var vapor = [];
-  function seedVapor(){
-    vapor = [];
-    for (var i=0;i<26;i++){
-      vapor.push({ x: Math.random(), y: Math.random(), speed: 0.15+Math.random()*0.25, drift: (Math.random()-0.5)*0.1, r: 1.5+Math.random()*2.5, life: Math.random() });
-    }
-  }
-  seedVapor();
-
-  var animT = 0; // 0..1 loop position through the simulated day
-  var loopDurationSec = 16;
-  var lastFrame = null;
-  var currentSim = null;
-  var currentParams = null;
-  var dropCount = 0;
-
-  function colorMix(){
-    return {
-      sand: themeColor('--sand') || '#E7DAB9',
-      water: themeColor('--water') || '#1E6E77',
-      water2: themeColor('--water-2') || '#143F49',
-      biochar: themeColor('--biochar') || '#2E211A',
-      biocharSoft: themeColor('--biochar-soft') || '#7A5C3E',
-      sun: themeColor('--sun') || '#C98A2B',
-      sun2: themeColor('--sun-2') || '#E4B24C',
-      ink: themeColor('--ink') || '#26190F',
-      paper: themeColor('--paper') || '#F4ECD8',
-      line: themeColor('--line') || 'rgba(38,25,15,0.16)'
-    };
-  }
-
-  function drawBasin(dtSec){
-    var w = canvas._w, h = canvas._h;
-    var c = colorMix();
-    cctx.clearRect(0,0,w,h);
-
-    var groundY = h*0.82;
-    var basinLeft = w*0.06, basinRight = w*0.72, basinTop = h*0.30;
-
-    // sky
-    var skyGrad = cctx.createLinearGradient(0,0,0,groundY);
-    skyGrad.addColorStop(0, c.paper);
-    skyGrad.addColorStop(1, c.sand);
-    cctx.fillStyle = skyGrad;
-    cctx.fillRect(0,0,w,groundY);
-
-    // sun arc
-    var dayFrac = animT; // 0..1
-    var sunX = w*0.1 + dayFrac*w*0.8;
-    var sunY = h*0.22 - Math.sin(Math.PI*dayFrac)*h*0.14;
-    var intensity = Math.max(0.15, Math.sin(Math.PI*dayFrac));
-    cctx.beginPath();
-    cctx.arc(sunX, sunY, 14+intensity*6, 0, Math.PI*2);
-    var sg = cctx.createRadialGradient(sunX,sunY,2,sunX,sunY,26);
-    sg.addColorStop(0, c.sun2); sg.addColorStop(1, 'rgba(0,0,0,0)');
-    cctx.fillStyle = sg; cctx.fill();
-    cctx.beginPath();
-    cctx.arc(sunX, sunY, 8, 0, Math.PI*2);
-    cctx.fillStyle = c.sun; cctx.fill();
-
-    // sun rays toward basin
-    cctx.strokeStyle = 'rgba(201,138,43,'+(0.10+intensity*0.12)+')';
-    cctx.lineWidth = 1.4;
-    for (var i=0;i<4;i++){
-      var tx = basinLeft + (basinRight-basinLeft)*(0.2+0.2*i);
-      cctx.beginPath(); cctx.moveTo(sunX,sunY); cctx.lineTo(tx, basinTop+6); cctx.stroke();
-    }
-
-    // basin body (brine)
-    var brineTop = basinTop+18;
-    var brineBottom = groundY-10;
-    cctx.fillStyle = c.water2;
-    cctx.fillRect(basinLeft, basinTop, basinRight-basinLeft, groundY-basinTop);
-    var waterGrad = cctx.createLinearGradient(0,brineTop,0,brineBottom);
-    waterGrad.addColorStop(0, c.water);
-    waterGrad.addColorStop(1, c.water2);
-    cctx.fillStyle = waterGrad;
-    cctx.fillRect(basinLeft+4, brineTop, basinRight-basinLeft-8, brineBottom-brineTop);
-
-    // floating biochar mat
-    var matY = brineTop-4;
-    cctx.fillStyle = c.biocharSoft;
-    cctx.globalAlpha = 0.9;
-    for (var mx = basinLeft+10; mx < basinRight-10; mx += 22){
-      cctx.beginPath();
-      cctx.ellipse(mx+ (Math.sin(animT*40+mx)*1.2), matY, 13, 4.5, 0, 0, Math.PI*2);
-      cctx.fillStyle = c.biochar;
-      cctx.fill();
-      cctx.beginPath();
-      cctx.ellipse(mx+6+ (Math.sin(animT*40+mx+2)*1.2), matY-1.5, 9, 3.2, 0, 0, Math.PI*2);
-      cctx.fillStyle = c.biocharSoft;
-      cctx.fill();
-    }
-    cctx.globalAlpha = 1;
-
-    // glass cover (sloped)
-    cctx.strokeStyle = 'rgba(255,255,255,0.55)';
-    cctx.lineWidth = 2;
-    cctx.beginPath();
-    cctx.moveTo(basinLeft-6, basinTop-2);
-    cctx.lineTo(basinRight*0.5, h*0.08);
-    cctx.lineTo(basinRight+22, basinTop-2);
-    cctx.stroke();
-    cctx.fillStyle = 'rgba(255,255,255,0.06)';
-    cctx.beginPath();
-    cctx.moveTo(basinLeft-6, basinTop-2);
-    cctx.lineTo(basinRight*0.5, h*0.08);
-    cctx.lineTo(basinRight+22, basinTop-2);
-    cctx.closePath();
-    cctx.fill();
-
-    // vapor particles
-    var evapBoost = 0.4 + intensity*1.2;
-    vapor.forEach(function(v){
-      v.y -= v.speed*evapBoost*dtSec*0.08;
-      v.x += v.drift*dtSec*0.02;
-      v.life -= dtSec*0.05*evapBoost;
-      if (v.life<=0 || v.y<0.15){
-        v.y = 0.95; v.x = Math.random(); v.life = 1;
-      }
-      var px = basinLeft+10 + v.x*(basinRight-basinLeft-20);
-      var py = matY - (matY-h*0.10)*(1-v.y);
-      cctx.beginPath();
-      cctx.arc(px, py, v.r, 0, Math.PI*2);
-      cctx.fillStyle = 'rgba(255,255,255,'+(0.35*v.life*intensity+0.05)+')';
-      cctx.fill();
-    });
-
-    // condensate channel + collection vessel
-    var vesselX = basinRight+40, vesselY = h*0.30, vesselW = 46, vesselH = h*0.42;
-    cctx.strokeStyle = c.line; cctx.lineWidth = 1.4;
-    cctx.strokeRect(vesselX, vesselY, vesselW, vesselH);
-    var fillFrac = currentSim ? Math.min(1, currentSim.liveFrac||0) : 0;
-    cctx.fillStyle = 'rgba(62,155,165,0.35)';
-    cctx.fillRect(vesselX+2, vesselY+vesselH-(vesselH-4)*fillFrac, vesselW-4, (vesselH-4)*fillFrac);
-    cctx.fillStyle = c.ink;
-    cctx.font = '11px "IBM Plex Mono"';
-    cctx.textAlign = 'center';
-    cctx.fillText('fresh water', vesselX+vesselW/2, vesselY-8);
-
-    // drip line from cover to vessel
-    cctx.strokeStyle = 'rgba(255,255,255,0.4)';
-    cctx.beginPath();
-    cctx.moveTo(basinRight+22, basinTop-2);
-    cctx.lineTo(vesselX+vesselW/2, vesselY);
-    cctx.stroke();
-
-    // ground / sand
-    cctx.fillStyle = c.sand;
-    cctx.fillRect(0, groundY, w, h-groundY);
-
-    // labels
-    cctx.fillStyle = c.ink;
-    cctx.font = '11px "IBM Plex Sans"';
-    cctx.textAlign = 'left';
-    cctx.globalAlpha = 0.75;
-    cctx.fillText('brine, concentrating as it evaporates', basinLeft, groundY+16);
-    cctx.fillText('carbonized date-palm mat, floating at the surface', basinLeft, basinTop+10);
-    cctx.globalAlpha = 1;
-  }
-
-  function frame(ts){
-    if (lastFrame===null) lastFrame = ts;
-    var dtSec = (ts-lastFrame)/1000;
-    lastFrame = ts;
-
-    animT += dtSec/loopDurationSec;
-    if (animT>1){
-      animT -= 1;
-      dropCount = 0;
-    }
-    if (currentSim){
-      var idx = Math.min(currentSim.t.length-1, Math.floor(animT*(currentSim.t.length-1)));
-      var totalAtT = currentSim.results.biochar.cum[idx];
-      var totalAll = currentSim.results.biochar.totalL || 1;
-      currentSim.liveFrac = totalAtT/ (currentParams.V0*0.5 || totalAll || 1);
-      liveDrops.textContent = fmt(totalAtT,1);
-    }
-    drawBasin(dtSec);
-    requestAnimationFrame(frame);
-  }
-
-  // ---------- run ----------
-  function run(){
-    var p = readParams();
-    updateLabels();
-    var sim = simulate(p);
-    currentSim = sim;
-    currentParams = p;
-    try { buildCharts(sim); } catch(e){ console.error('Chart build failed:', e); }
-    try { buildStats(sim, p); } catch(e){ console.error('Stats build failed:', e); }
-  }
-
-  [gmaxEl,areaEl,volEl,salEl,dayEl].forEach(function(el){
-    el.addEventListener('input', updateLabels);
-  });
-  runBtn.addEventListener('click', run);
-  window.addEventListener('resize', sizeCanvas);
-
-  sizeCanvas();
-  updateLabels();
-  try { run(); } catch(e){ console.error('Initial run failed:', e); }
-  requestAnimationFrame(frame);
-
-})();
-</script>
-</body>
-</html>
-
-
+<footer>
+  <div class="wrap">
+    <p>AshPure is a research concept. The firing range and pore size shown here come from published studies on fly-ash ceramic membranes, which have used temperatures of roughly 800–1,150 °C and reported average pore sizes near 0.6 micrometres. Simulator results are illustrative and do not replace laboratory testing. Real coal ash must never be handled outside a professional, tested setting.</p>
+  </div>
+</footer>
